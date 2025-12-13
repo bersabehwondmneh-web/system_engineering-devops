@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script forcefully stops the "7-highlander" process using the SIGKILL signal (signal 9)
+# Locate and kill the "7-highlander" process
+pkill -9 -f 7-highlander
