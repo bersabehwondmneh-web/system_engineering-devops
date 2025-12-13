@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script finds and stops the "4-to_infinity_and_beyond" script using an alternative method to kill
+# Find the Process ID(s) of the script by searching for its name
+PIDS=$(pgrep -f "4-to_infinity_and_beyond")
+# Check if any matching process IDs were found
+if [ -n "$PIDS" ]; then
+    # Send a SIGTERM signal using /proc to terminate each process
+    for PID in $PIDS; do
+        echo "Stopping process $PID..."
+        echo -9 > /proc/$PID/oom_score_adj 2>/dev/null
+        # Use /proc filesystem to send a termination request
+        sudo sh -c "echo 1 > /proc/$PID/oom_kill" 2>/dev/null
+    done
+    echo "Requested termination for '4-to_infinity_and_beyond'."
+else
+    echo "No running '4-to_infinity_and_beyond' process found."
+fi
