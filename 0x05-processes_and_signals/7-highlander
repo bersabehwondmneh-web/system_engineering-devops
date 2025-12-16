@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Sends a SIGTERM signal to the running 7-highlander script.
-# Use [.] to match the running process './7-highlander' but not the pgrep command itself
 PID=$(pgrep -f "[.]/7-highlander")
 if [ -n "$PID" ]; then
-    # Send SIGTERM (Signal 15)
     kill "$PID"
 fi
