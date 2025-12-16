@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 # Script that prints "To infinity and beyond" indefinitely and handles SIGTERM.
-# Function to run when SIGTERM (signal 15) is received.
 invincible() {
     echo "I am invincible!!!"
 }
-
-# Use the 'trap' command to call the 'invincible' function when SIGTERM is received.
 trap 'invincible' SIGTERM
-
-# Infinite loop
 while true; do
     echo "To infinity and beyond"
     sleep 2
