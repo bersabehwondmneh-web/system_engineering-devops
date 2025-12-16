@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-# This script lists all currently running processes with required formatting
-ps -eo uid,pid,ppid,cmd --forest
+ps auxf
