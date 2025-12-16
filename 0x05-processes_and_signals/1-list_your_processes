@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-# This script lists all currently running processes on the system in a user-friendly view
 ps -ef --forest --cols=200
