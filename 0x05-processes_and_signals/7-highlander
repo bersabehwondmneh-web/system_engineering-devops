@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Display a message indefinitely and react to SIGTERM
+# This script prints "To infinity and beyond" indefinitely and reacts to SIGTERM
 
 trap 'echo "I am invincible!!!"' SIGTERM
 
-while true; do
+while true
+do
     echo "To infinity and beyond"
     sleep 2
 done
