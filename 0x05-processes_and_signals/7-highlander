@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-# Script that prints "To infinity and beyond" indefinitely and handles SIGTERM.
-invincible() {
-    echo "I am invincible!!!"
-}
-trap 'invincible' SIGTERM
-while true; do
-    echo "To infinity and beyond"
-    sleep 2
-done
+# Sends a SIGTERM signal to the running 7-highlander script.
+# Use [.] to match the running process './7-highlander' but not the pgrep command itself
+PID=$(pgrep -f "[.]/7-highlander")
+if [ -n "$PID" ]; then
+    # Send SIGTERM (Signal 15)
+    kill "$PID"
+fi
