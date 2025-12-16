@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
-# This script lists all currently running processes on the system with a user-friendly view
-The 'ps' command with -e shows all processes
-# -f gives full-format listing including user, PID, parent PID, etc.
-# --forest visually shows process hierarchy
-# --cols=200 ensures wide output is not truncated (optional for readability)
+# This script lists all currently running processes on the system in a user-friendly view
 ps -ef --forest --cols=200
